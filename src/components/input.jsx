@@ -4,7 +4,7 @@ export default function ({ type, name }) {
       <label>{name}</label>
       <input
         type={type}
-        className="outline outline-black px-2 py-1 hover:outline-blue-700 focus:outline-2 focus:outline-blue-700"
+        className="outline outline-black p-[3px] pl-2 hover:outline-blue-700 focus:outline-2 focus:outline-blue-700 rounded-[5px]"
       />
     </div>
   );
