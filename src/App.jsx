@@ -1,1 +1,1 @@
-export default function App() {}
+function App() {}
