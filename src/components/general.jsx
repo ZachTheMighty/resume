@@ -1,11 +1,12 @@
 import Input from "./input.jsx";
+import Section from "./section.jsx";
 
-export default function () {
+export default function General() {
   return (
-    <div className="flex justify-center items-center gap-4">
+    <Section sectionName={"General information"}>
       <Input type="text" name="Name" />
       <Input type="email" name="Email" />
       <Input type="tel" name="Tel" />
-    </div>
+    </Section>
   );
 }
