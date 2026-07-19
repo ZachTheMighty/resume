@@ -6,7 +6,7 @@ export default function General() {
     <Section sectionName={"General information"}>
       <Input type="text" name="Name" />
       <Input type="email" name="Email" />
-      <Input type="tel" name="Tel" />
+      <Input type="tel" name="Phone number" />
     </Section>
   );
 }
