@@ -1,4 +1,4 @@
-export default function ({ type, name }) {
+export default function Input({ type, name }) {
   return (
     <div className="flex flex-col">
       <label>{name}</label>

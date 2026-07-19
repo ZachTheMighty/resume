@@ -1,4 +1,4 @@
-export default function ({ sectionName, children }) {
+export default function Section({ sectionName, children }) {
   return (
     <div>
       <h1 className="mb-6 text-2xl font-light">{sectionName}</h1>
