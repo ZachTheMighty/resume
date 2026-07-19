@@ -1,4 +1,4 @@
-import Input from "./input.jsx";
+import Input from "../inputs/input.jsx";
 import Section from "./section.jsx";
 
 export default function Education() {
