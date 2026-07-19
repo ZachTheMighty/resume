@@ -1,8 +1,6 @@
 import { useState } from "react";
+import GenerateResume from "./components/generate_resume.jsx";
 
-import General from "./components/sections/general.jsx";
-import Education from "./components/sections/education.jsx";
-import Practical from "./components/sections/practical.jsx";
 
 export default function App() {
   const [resume, setResume] = useState(false);
@@ -21,12 +19,7 @@ export default function App() {
 
   return (
     <>
-      <General />
-      <Education />
-      <Practical />
-      {!resume ? <button onClick={handleGenerate}>Generate resume</button> :
-        <button onClick={handleEdit}>Edit resume</button>
-      }
+    {resume ? <Resume onEdit={handleEdit}/> : <GenerateResume onGenerate={handleGenerate}/>}
     </>
   );
 }
