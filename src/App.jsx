@@ -1,15 +1,18 @@
 import { useState } from "react";
-import GenerateResume from "./components/generate_resume.jsx";
 
+import GenerateResume from "./components/generate_resume.jsx";
+import Resume from "./components/resume.jsx";
 
 export default function App() {
   const [resume, setResume] = useState(false);
+  const [values, setValues] = useState({});
 
   const root = document.querySelector("#root");
 
   function handleGenerate() {
     root.classList.toggle("bg-teal-400");
     setResume(true);
+    console.log(values);
   }
 
   function handleEdit() {
@@ -19,7 +22,15 @@ export default function App() {
 
   return (
     <>
-    {resume ? <Resume onEdit={handleEdit}/> : <GenerateResume onGenerate={handleGenerate}/>}
+      {resume ? (
+        <Resume onEdit={handleEdit} values={values} />
+      ) : (
+        <GenerateResume
+          onGenerate={handleGenerate}
+          values={values}
+          setValues={setValues}
+        />
+      )}
     </>
   );
 }
