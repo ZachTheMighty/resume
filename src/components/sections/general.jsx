@@ -10,7 +10,18 @@ export default function General({ values, setValues }) {
   return (
     <Section sectionName={"General information"}>
       <div className="flex flex-wrap justify-start items-center gap-6">
-        <Input type="text" name="Name" values={values} setValues={setValues} />
+        <Input
+          type="text"
+          name="First name"
+          values={values}
+          setValues={setValues}
+        />
+        <Input
+          type="text"
+          name="Last name"
+          values={values}
+          setValues={setValues}
+        />
         <Input
           type="email"
           name="Email"
