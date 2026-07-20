@@ -4,8 +4,6 @@ import "./index.css";
 import App from "./App.jsx";
 
 document.body.className = "min-h-screen flex justify-center items-center";
-const root = document.getElementById("root");
-root.className = "flex flex-col";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
