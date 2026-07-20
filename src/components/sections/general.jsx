@@ -44,7 +44,13 @@ export default function General({ values, setValues }) {
           id="file"
           accept="image/*"
           className="hidden"
-          onChange={(event) => setFile(event.target.files[0])}
+          onChange={(event) => {
+            setFile(event.target.files[0]);
+            setValues({
+              ...values,
+              photo: URL.createObjectURL(event.target.files[0]),
+            });
+          }}
         />
 
         <div className="mt-4 flex justify-center">
