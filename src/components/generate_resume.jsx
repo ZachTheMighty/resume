@@ -5,7 +5,10 @@ import Practical from "./sections/practical.jsx";
 export default function GenerateResume({ onGenerate, values, setValues }) {
   return (
     <>
-      <form onSubmit={onGenerate} className="flex flex-col">
+      <form
+        onSubmit={onGenerate}
+        className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10"
+      >
         <General values={values} setValues={setValues} />
         <Education values={values} setValues={setValues} />
         <Practical values={values} setValues={setValues} />
