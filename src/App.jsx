@@ -12,7 +12,6 @@ export default function App() {
   function handleGenerate() {
     root.classList.toggle("bg-teal-400");
     setResume(true);
-    console.log(values);
   }
 
   function handleEdit() {
