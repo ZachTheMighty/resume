@@ -50,7 +50,6 @@ export default function General({ values, setValues }) {
         </label>
 
         <input
-          required
           type="file"
           id="file"
           accept="image/*"
