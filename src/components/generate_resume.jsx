@@ -9,7 +9,9 @@ export default function GenerateResume({ onGenerate, values, setValues }) {
         <General values={values} setValues={setValues} />
         <Education values={values} setValues={setValues} />
         <Practical values={values} setValues={setValues} />
-        <button>Generate resume</button>
+        <button className="bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2 self-end">
+          Generate resume
+        </button>
       </form>
     </>
   );
