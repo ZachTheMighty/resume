@@ -12,6 +12,7 @@ export default function General({ values, setValues }) {
         values={values}
         setValues={setValues}
       />
+      <Input type="text" name="Country" values={values} setValeus={setValues} />
     </Section>
   );
 }
