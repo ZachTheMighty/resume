@@ -38,7 +38,7 @@ export default function General({ values, setValues }) {
           type="text"
           name="Country"
           values={values}
-          setValeus={setValues}
+          setValues={setValues}
         />
       </div>
       <div className="mt-8">
