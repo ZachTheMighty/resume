@@ -4,24 +4,26 @@ import Section from "./section.jsx";
 export default function Education({ values, setValues }) {
   return (
     <Section sectionName={"Educational experience"}>
-      <Input
-        type="text"
-        name="School name"
-        values={values}
-        setValues={setValues}
-      />
-      <Input
-        type="text"
-        name="Title of study"
-        values={values}
-        setValues={setValues}
-      />
-      <Input
-        type="date"
-        name="Date of study"
-        values={values}
-        setValues={setValues}
-      />
+      <div className="flex flex-wrap justify-start items-center gap-6">
+        <Input
+          type="text"
+          name="School name"
+          values={values}
+          setValues={setValues}
+        />
+        <Input
+          type="text"
+          name="Title of study"
+          values={values}
+          setValues={setValues}
+        />
+        <Input
+          type="date"
+          name="Date of study"
+          values={values}
+          setValues={setValues}
+        />
+      </div>
     </Section>
   );
 }
