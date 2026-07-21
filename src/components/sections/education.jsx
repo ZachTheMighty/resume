@@ -4,7 +4,7 @@ import Section from "./section.jsx";
 export default function Education({ values, setValues }) {
   return (
     <Section sectionName={"Educational experience"}>
-      <div className="flex flex-wrap justify-start items-center gap-6">
+      <div className="grid grid-cols-2 gap-6">
         <Input
           type="text"
           name="School name"
