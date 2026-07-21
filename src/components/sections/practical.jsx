@@ -23,8 +23,20 @@ export default function Practical({ values, setValues }) {
           values={values}
           setValues={setValues}
         />
-        <Input type="date" name="From" values={values} setValues={setValues} />
-        <Input type="date" name="To" values={values} setValues={setValues} />
+        <Input
+          type="date"
+          name="From"
+          values={values}
+          setValues={setValues}
+          section="practical"
+        />
+        <Input
+          type="date"
+          name="To"
+          values={values}
+          setValues={setValues}
+          section="practical"
+        />
       </div>
     </Section>
   );

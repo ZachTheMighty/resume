@@ -19,8 +19,20 @@ export default function Education({ values, setValues }) {
           values={values}
           setValues={setValues}
         />
-        <Input type="date" name="From" values={values} setValues={setValues} />
-        <Input type="date" name="To" values={values} setValues={setValues} />
+        <Input
+          type="date"
+          name="From"
+          values={values}
+          setValues={setValues}
+          section="education"
+        />
+        <Input
+          type="date"
+          name="To"
+          values={values}
+          setValues={setValues}
+          section="education"
+        />
         <div
           tabIndex="0"
           className="col-span-2 flex justify-center items-center bg-indigo-500 rounded-md py-4 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
