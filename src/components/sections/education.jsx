@@ -17,12 +17,8 @@ export default function Education({ values, setValues }) {
           values={values}
           setValues={setValues}
         />
-        <Input
-          type="date"
-          name="Date of study"
-          values={values}
-          setValues={setValues}
-        />
+        <Input type="date" name="From" values={values} setValues={setValues} />
+        <Input type="date" name="To" values={values} setValues={setValues} />
       </div>
     </Section>
   );
