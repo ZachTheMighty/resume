@@ -23,7 +23,7 @@ export default function Education({ values, setValues }) {
         <Input type="date" name="To" values={values} setValues={setValues} />
         <div
           tabIndex="0"
-          className="col-span-2 flex justify-center items-center bg-indigo-500 rounded-md py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
+          className="col-span-2 flex justify-center items-center bg-indigo-500 rounded-md py-4 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
         >
           <div>Add experience</div>
           <img src={plus} alt="plus sign" className="w-8" />
