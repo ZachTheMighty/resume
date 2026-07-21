@@ -1,7 +1,6 @@
 import Input from "../inputs/input.jsx";
 import Section from "./section.jsx";
 
-import plus from "../../assets/plus.svg";
 import { useState } from "react";
 
 export default function General({ values, setValues }) {
@@ -43,13 +42,11 @@ export default function General({ values, setValues }) {
       </div>
       <div className="mt-8">
         <label htmlFor="file">
-          <div className="mb-2">Upload photo</div>
-
           <div
             tabIndex="0"
-            className="flex justify-center bg-indigo-500 rounded-md py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
+            className="flex justify-center items-center bg-indigo-500 rounded-md py-4 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
           >
-            <img src={plus} alt="plus sign" className="w-10" />
+            Upload photo
           </div>
         </label>
 
