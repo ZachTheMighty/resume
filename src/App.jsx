@@ -6,6 +6,7 @@ import Resume from "./components/resume.jsx";
 export default function App() {
   const [resume, setResume] = useState(false);
   const [values, setValues] = useState({});
+  const [edu, setEdu] = useState([]);
 
   const root = document.querySelector("#root");
 
@@ -22,12 +23,14 @@ export default function App() {
   return (
     <>
       {resume ? (
-        <Resume onEdit={handleEdit} values={values} />
+        <Resume onEdit={handleEdit} values={values} edu={edu} />
       ) : (
         <GenerateResume
           onGenerate={handleGenerate}
           values={values}
           setValues={setValues}
+          edu={edu}
+          setEdu={setEdu}
         />
       )}
     </>
