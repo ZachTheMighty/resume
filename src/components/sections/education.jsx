@@ -6,7 +6,10 @@ import plus from "../../assets/plus.svg";
 export default function Education({ values, setValues, edu, setEdu }) {
   return (
     <Section sectionName={"Educational experience"}>
-      <form className="grid grid-cols-2 gap-6">
+      <form
+        className="grid grid-cols-2 gap-6"
+        onSubmit={(event) => event.preventDefault()}
+      >
         <Input
           type="text"
           name="School name"
