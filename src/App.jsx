@@ -18,12 +18,12 @@ export default function App() {
   };
 
   const educationInit = {
-    schoolName: {
+    school: {
       value: "",
       type: "text",
       labelName: "School Name",
     },
-    titleOfStudy: {
+    title: {
       value: "",
       type: "text",
       labelName: "Title of study",
