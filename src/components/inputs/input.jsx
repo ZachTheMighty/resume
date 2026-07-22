@@ -7,6 +7,7 @@ export default function Input({ type, name, values, setValues }) {
       <input
         required
         type={type}
+        value={values[camelCase(name)]}
         className="outline outline-white/15 text-focus:outline-offset-2 px-3 py-1.5 focus:outline-2 focus:outline-indigo-500 rounded-md bg-white/5"
         onChange={(event) =>
           setValues({
