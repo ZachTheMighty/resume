@@ -11,10 +11,7 @@ export default function GenerateResume({
 }) {
   return (
     <>
-      <form
-        onSubmit={onGenerate}
-        className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10"
-      >
+      <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10">
         <General values={values} setValues={setValues} />
         <Education
           values={values}
@@ -23,10 +20,13 @@ export default function GenerateResume({
           setEdu={setEdu}
         />
         <Practical values={values} setValues={setValues} />
-        <button className="bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2 self-end">
+        <button
+          className="bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2 self-end"
+          onClick={onGenerate}
+        >
           Generate resume
         </button>
-      </form>
+      </div>
     </>
   );
 }

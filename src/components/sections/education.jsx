@@ -6,7 +6,7 @@ import plus from "../../assets/plus.svg";
 export default function Education({ values, setValues, edu, setEdu }) {
   return (
     <Section sectionName={"Educational experience"}>
-      <div className="grid grid-cols-2 gap-6">
+      <form className="grid grid-cols-2 gap-6">
         <Input
           type="text"
           name="School name"
@@ -33,8 +33,7 @@ export default function Education({ values, setValues, edu, setEdu }) {
           setValues={setValues}
           section="education"
         />
-        <div
-          tabIndex="0"
+        <button
           className="col-span-2 flex justify-center items-center bg-indigo-500 rounded-md py-4 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
           onClick={() =>
             setEdu([
@@ -50,8 +49,8 @@ export default function Education({ values, setValues, edu, setEdu }) {
         >
           <div>Add experience</div>
           <img src={plus} alt="plus sign" className="w-8" />
-        </div>
-      </div>
+        </button>
+      </form>
     </Section>
   );
 }
