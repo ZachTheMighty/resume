@@ -61,11 +61,31 @@ export default function App() {
   };
 
   const practicalInit = {
-    previousCompanyName: "",
-    positionTitle: "",
-    responsiblities: "",
-    from: "",
-    to: "",
+    previous: {
+      value: "",
+      type: "text",
+      labelName: "Previous company name",
+    },
+    position: {
+      value: "",
+      type: "text",
+      labelName: "Position title",
+    },
+    responibilities: {
+      value: "",
+      type: "text",
+      labelName: "Responibilities",
+    },
+    from: {
+      value: "",
+      type: "date",
+      labelName: "From",
+    },
+    to: {
+      value: "",
+      type: "date",
+      labelName: "To",
+    },
   };
 
   const [general, setGeneral] = useState(generalInit);
