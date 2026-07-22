@@ -8,37 +8,49 @@ import Resume from "./components/resume.jsx";
 export default function App() {
   const [resume, setResume] = useState(false);
 
-  const [general, setGeneral] = useState({
+  const generalInit = {
     firstName: "",
     lastName: "",
     email: "",
     phoneNumber: "",
     country: "",
     photo: "",
-  });
+  };
 
-  const [education, setEducation] = useState({
+  const educationInit = {
     schoolName: "",
     titleOfStudy: "",
     from: "",
     to: "",
-  });
+  };
 
-  const [edus, setEdus] = useState([]);
-
-  const [practical, setPractical] = useState({
+  const practicalInit = {
     previousCompanyName: "",
     positionTitle: "",
     responsiblities: "",
     from: "",
     to: "",
-  });
+  };
+
+  const [general, setGeneral] = useState(generalInit);
+
+  const [education, setEducation] = useState({ educationInit });
+
+  const [edus, setEdus] = useState([]);
+
+  const [practical, setPractical] = useState({ practicalInit });
 
   const root = document.querySelector("#root");
 
   function handleGenerate() {
     root.classList.toggle("bg-teal-400");
     setResume(true);
+  }
+
+  function handleReset() {
+    setGeneral(generalInit);
+    setEducation(educationInit);
+    setPractical(practicalInit);
   }
 
   function handleEdit() {
@@ -66,12 +78,22 @@ export default function App() {
               setEdus={setEdus}
             />
             <Practical practical={practical} setPractical={setPractical} />
-            <button
-              className="bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2 self-end"
-              onClick={handleGenerate}
-            >
-              Generate resume
-            </button>
+
+            <div className="self-end">
+              <button
+                className="mr-8 px-3 py-2 text-xl font-semibold hover:bg-white/10 rounded-md active:bg-white/5"
+                onClick={handleReset}
+              >
+                Reset form
+              </button>
+
+              <button
+                className="bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
+                onClick={handleGenerate}
+              >
+                Generate resume
+              </button>
+            </div>
           </div>
         </>
       )}
