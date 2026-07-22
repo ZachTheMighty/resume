@@ -1,11 +1,7 @@
 import Input from "../inputs/input.jsx";
 import Section from "./section.jsx";
 
-import { useState } from "react";
-
 export default function General({ general, setGeneral }) {
-  const [file, setFile] = useState(null);
-
   return (
     <Section sectionName={"General information"}>
       <div className="flex flex-wrap justify-start items-center gap-6">
@@ -56,7 +52,6 @@ export default function General({ general, setGeneral }) {
           accept="image/*"
           className="hidden"
           onChange={(event) => {
-            setFile(event.target.files[0]);
             setGeneral({
               ...general,
               photo: URL.createObjectURL(event.target.files[0]),
