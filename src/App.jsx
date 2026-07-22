@@ -18,15 +18,17 @@ export default function App() {
   });
 
   const [education, setEducation] = useState({
-    school: "",
-    title: "",
+    schoolName: "",
+    titleOfStudy: "",
     from: "",
     to: "",
   });
 
+  const [edus, setEdus] = useState([]);
+
   const [practical, setPractical] = useState({
-    company: "",
-    position: "",
+    previousCompanyName: "",
+    positionTitle: "",
     responsiblities: "",
     from: "",
     to: "",
@@ -37,7 +39,6 @@ export default function App() {
   function handleGenerate() {
     root.classList.toggle("bg-teal-400");
     setResume(true);
-    console.log(general, education, practical);
   }
 
   function handleEdit() {
@@ -51,14 +52,19 @@ export default function App() {
         <Resume
           onEdit={handleEdit}
           general={general}
-          education={education}
+          edus={edus}
           practical={practical}
         />
       ) : (
         <>
           <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10">
             <General general={general} setGeneral={setGeneral} />
-            <Education education={education} setEducation={setEducation} />
+            <Education
+              education={education}
+              setEducation={setEducation}
+              edus={edus}
+              setEdus={setEdus}
+            />
             <Practical practical={practical} setPractical={setPractical} />
             <button
               className="bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2 self-end"
