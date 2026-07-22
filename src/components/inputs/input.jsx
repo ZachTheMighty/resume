@@ -1,6 +1,6 @@
 import camelCase from "./camel_case.js";
 
-export default function Input({ type, name, values, setValues, section }) {
+export default function Input({ type, name, values, setValues }) {
   return (
     <div className="flex flex-col gap-2 flex-1">
       <label className="text-sm">{name}</label>
@@ -11,8 +11,7 @@ export default function Input({ type, name, values, setValues, section }) {
         onChange={(event) =>
           setValues({
             ...values,
-            [`${section ? section + "." : ""}${camelCase(name)}`]:
-              event.target.value,
+            [camelCase(name)]: event.target.value,
           })
         }
       />

@@ -3,7 +3,7 @@ import Section from "./section.jsx";
 
 import { useState } from "react";
 
-export default function General({ values, setValues }) {
+export default function General({ general, setGeneral }) {
   const [file, setFile] = useState(null);
 
   return (
@@ -12,32 +12,32 @@ export default function General({ values, setValues }) {
         <Input
           type="text"
           name="First name"
-          values={values}
-          setValues={setValues}
+          values={general}
+          setValues={setGeneral}
         />
         <Input
           type="text"
           name="Last name"
-          values={values}
-          setValues={setValues}
+          values={general}
+          setValues={setGeneral}
         />
         <Input
           type="email"
           name="Email"
-          values={values}
-          setValues={setValues}
+          values={general}
+          setValues={setGeneral}
         />
         <Input
           type="tel"
           name="Phone number"
-          values={values}
-          setValues={setValues}
+          values={general}
+          setValues={setGeneral}
         />
         <Input
           type="text"
           name="Country"
-          values={values}
-          setValues={setValues}
+          values={general}
+          setValues={setGeneral}
         />
       </div>
       <div className="mt-8">
@@ -57,8 +57,8 @@ export default function General({ values, setValues }) {
           className="hidden"
           onChange={(event) => {
             setFile(event.target.files[0]);
-            setValues({
-              ...values,
+            setGeneral({
+              ...general,
               photo: URL.createObjectURL(event.target.files[0]),
             });
           }}

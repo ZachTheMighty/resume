@@ -3,7 +3,7 @@ import Section from "./section.jsx";
 
 import plus from "../../assets/plus.svg";
 
-export default function Education({ values, setValues, edu, setEdu }) {
+export default function Education({ education, setEducation, edu, setEdu }) {
   return (
     <Section sectionName={"Educational experience"}>
       <form
@@ -13,28 +13,26 @@ export default function Education({ values, setValues, edu, setEdu }) {
         <Input
           type="text"
           name="School name"
-          values={values}
-          setValues={setValues}
+          values={education}
+          setValues={setEducation}
         />
         <Input
           type="text"
           name="Title of study"
-          values={values}
-          setValues={setValues}
+          values={education}
+          setValues={setEducation}
         />
         <Input
           type="date"
           name="From"
-          values={values}
-          setValues={setValues}
-          section="education"
+          values={education}
+          setValues={setEducation}
         />
         <Input
           type="date"
           name="To"
-          values={values}
-          setValues={setValues}
-          section="education"
+          values={education}
+          setValues={setEducation}
         />
         <button
           className="col-span-2 flex justify-center items-center bg-indigo-500 rounded-md py-4 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
