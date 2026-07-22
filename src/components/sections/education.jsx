@@ -4,6 +4,15 @@ import Section from "./section.jsx";
 import plus from "../../assets/plus.svg";
 
 export default function Education({ education, setEducation, edus, setEdus }) {
+  function resetForm() {
+    setEducation({
+      schoolName: "",
+      titleOfStudy: "",
+      from: "",
+      to: "",
+    });
+  }
+
   return (
     <Section sectionName={"Educational experience"}>
       <form
@@ -11,6 +20,7 @@ export default function Education({ education, setEducation, edus, setEdus }) {
         onSubmit={(event) => {
           event.preventDefault();
           setEdus([...edus, education]);
+          resetForm();
         }}
       >
         <Input
