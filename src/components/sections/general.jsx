@@ -65,7 +65,9 @@ export default function General({ general, setGeneral }) {
         />
 
         <div className="mt-4 flex justify-center">
-          {file && <img src={general.photo} className="w-md" />}
+          {file && general.photo !== "" && (
+            <img src={general.photo} className="w-md" />
+          )}
         </div>
       </div>
     </Section>
