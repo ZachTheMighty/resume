@@ -18,10 +18,26 @@ export default function App() {
   };
 
   const educationInit = {
-    schoolName: "",
-    titleOfStudy: "",
-    from: "",
-    to: "",
+    schoolName: {
+      value: "",
+      type: "text",
+      labelName: "School Name",
+    },
+    titleOfStudy: {
+      value: "",
+      type: "text",
+      labelName: "Title of study",
+    },
+    from: {
+      value: "",
+      type: "date",
+      labelName: "From",
+    },
+    to: {
+      value: "",
+      type: "date",
+      labelName: "To",
+    },
   };
 
   const practicalInit = {
@@ -74,6 +90,7 @@ export default function App() {
             <Education
               education={education}
               setEducation={setEducation}
+              initState={educationInit}
               edus={edus}
               setEdus={setEdus}
             />

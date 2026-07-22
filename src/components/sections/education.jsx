@@ -2,19 +2,17 @@ import Input from "../inputs/input.jsx";
 import Section from "./section.jsx";
 
 import plus from "../../assets/plus.svg";
+
 import { useState } from "react";
 
-export default function Education({ education, setEducation, edus, setEdus }) {
+export default function Education({
+  education,
+  setEducation,
+  initState,
+  edus,
+  setEdus,
+}) {
   const [added, setAdded] = useState(false);
-
-  function resetForm() {
-    setEducation({
-      schoolName: "",
-      titleOfStudy: "",
-      from: "",
-      to: "",
-    });
-  }
 
   return (
     <Section sectionName={"Educational experience"}>
@@ -23,38 +21,28 @@ export default function Education({ education, setEducation, edus, setEdus }) {
         onSubmit={(event) => {
           event.preventDefault();
           setEdus([...edus, education]);
-          resetForm();
+          setEducation(initState);
           setAdded(true);
         }}
       >
-        <Input
-          type="text"
-          name="School name"
-          values={education}
-          setValues={setEducation}
-          setAdded={setAdded}
-        />
-        <Input
-          type="text"
-          name="Title of study"
-          values={education}
-          setValues={setEducation}
-          setAdded={setAdded}
-        />
-        <Input
-          type="date"
-          name="From"
-          values={education}
-          setValues={setEducation}
-          setAdded={setAdded}
-        />
-        <Input
-          type="date"
-          name="To"
-          values={education}
-          setValues={setEducation}
-          setAdded={setAdded}
-        />
+        {Object.entries(education).map(([key, input], index) => (
+          <Input name={input.labelName} key={index}>
+            <input
+              required
+              type={input.type}
+              value={input.value}
+              className="outline outline-white/15 text-focus:outline-offset-2 px-3 py-1.5 focus:outline-2 focus:outline-indigo-500 rounded-md bg-white/5"
+              onChange={(event) => {
+                setEducation({
+                  ...education,
+                  [key]: { ...education[key], value: event.target.value },
+                });
+                setAdded(false);
+              }}
+            />
+          </Input>
+        ))}
+
         <button className="col-span-2 flex justify-center items-center bg-indigo-500 rounded-md py-4 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2">
           <div>Add experience</div>
           <img src={plus} alt="plus sign" className="w-8" />
