@@ -9,12 +9,32 @@ export default function App() {
   const [resume, setResume] = useState(false);
 
   const generalInit = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phoneNumber: "",
-    country: "",
-    photo: "",
+    first: {
+      value: "",
+      type: "text",
+      labelName: "First name",
+    },
+    last: {
+      value: "",
+      type: "text",
+      labelName: "Last name",
+    },
+    email: {
+      value: "",
+      type: "email",
+      labelName: "Email",
+    },
+    phone: {
+      value: "",
+      type: "tel",
+      labelName: "Phone number",
+    },
+
+    country: {
+      value: "",
+      type: "text",
+      labelName: "Country",
+    },
   };
 
   const educationInit = {

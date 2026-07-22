@@ -5,36 +5,22 @@ export default function General({ general, setGeneral }) {
   return (
     <Section sectionName={"General information"}>
       <div className="flex flex-wrap justify-start items-center gap-6">
-        <Input
-          type="text"
-          name="First name"
-          values={general}
-          setValues={setGeneral}
-        />
-        <Input
-          type="text"
-          name="Last name"
-          values={general}
-          setValues={setGeneral}
-        />
-        <Input
-          type="email"
-          name="Email"
-          values={general}
-          setValues={setGeneral}
-        />
-        <Input
-          type="tel"
-          name="Phone number"
-          values={general}
-          setValues={setGeneral}
-        />
-        <Input
-          type="text"
-          name="Country"
-          values={general}
-          setValues={setGeneral}
-        />
+        {Object.entries(general).map(([key, input], index) => (
+          <Input name={input.labelName} key={index}>
+            <input
+              required
+              type={input.type}
+              value={input.value}
+              className="outline outline-white/15 text-focus:outline-offset-2 px-3 py-1.5 focus:outline-2 focus:outline-indigo-500 rounded-md bg-white/5"
+              onChange={(event) => {
+                setGeneral({
+                  ...general,
+                  [key]: { ...general[key], value: event.target.value },
+                });
+              }}
+            />
+          </Input>
+        ))}
       </div>
       <div className="mt-8">
         <label htmlFor="file">
