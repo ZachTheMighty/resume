@@ -34,11 +34,11 @@ export default function App() {
 
   const [general, setGeneral] = useState(generalInit);
 
-  const [education, setEducation] = useState({ educationInit });
+  const [education, setEducation] = useState(educationInit);
 
   const [edus, setEdus] = useState([]);
 
-  const [practical, setPractical] = useState({ practicalInit });
+  const [practical, setPractical] = useState(practicalInit);
 
   const root = document.querySelector("#root");
 
