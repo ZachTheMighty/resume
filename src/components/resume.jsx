@@ -1,7 +1,7 @@
 export default function Resume({ general }) {
   return (
     <div className="flex-1 flex min-h-screen">
-      <div className="flex-1 flex flex-cols justify-center mt-24 bg-gray/10 min-h-full">
+      <div className="flex-1 flex flex-col items-center mt-24 bg-gray/10 min-h-full">
         <img
           src={general.photo}
           alt="profile picture"
