@@ -1,10 +1,9 @@
 import { useState } from "react";
 
 import General from "./components/sections/general.jsx";
-import Education from "./components/sections/education.jsx";
 import Practical from "./components/sections/practical.jsx";
 import Resume from "./components/resume.jsx";
-import Achievement from "./components/sections/achievements.jsx";
+import Section from "./components/sections/section.jsx";
 
 export default function App() {
   const [resume, setResume] = useState(false);
@@ -146,19 +145,23 @@ export default function App() {
         <>
           <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10">
             <General general={general} setGeneral={setGeneral} />
-            <Education
-              education={education}
-              setEducation={setEducation}
+            <Section
+              sectionName="Educational experiences"
+              add="experience"
+              state={education}
+              setState={setEducation}
               initState={educationInit}
-              edus={edus}
-              setEdus={setEdus}
+              states={edus}
+              setStates={setEdus}
             />
-            <Achievement
-              achievement={achievement}
-              setAchievement={setAchievement}
+            <Section
+              sectionName="Major Achievements"
+              add="achievement"
+              state={achievement}
+              setState={setAchievement}
               initState={achievementsInit}
-              achievements={achievements}
-              setAchievements={setAchievements}
+              states={achievements}
+              setStates={setAchievements}
             />
             <Practical practical={practical} setPractical={setPractical} />
 
