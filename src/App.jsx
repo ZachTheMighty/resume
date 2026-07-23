@@ -73,6 +73,14 @@ export default function App() {
     },
   };
 
+  const skillsInit = {
+    skill: {
+      value: "",
+      type: "text",
+      labelName: "Skill",
+    },
+  };
+
   const practicalInit = {
     previous: {
       value: "",
@@ -111,6 +119,9 @@ export default function App() {
 
   const [practical, setPractical] = useState(practicalInit);
   const [practicals, setPracticals] = useState([]);
+
+  const [skill, setSkill] = useState(skillsInit);
+  const [skills, setSkills] = useState([]);
 
   const root = document.querySelector("#root");
 
@@ -162,6 +173,15 @@ export default function App() {
               initState={achievementsInit}
               states={achievements}
               setStates={setAchievements}
+            />
+            <Section
+              sectionName="Soft Skills"
+              add="skill"
+              state={skill}
+              setState={setSkill}
+              initState={skillsInit}
+              states={skills}
+              setStates={setSkills}
             />
             <Section
               sectionName="Practical Experiences"
