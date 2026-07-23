@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import General from "./components/sections/general.jsx";
-import Practical from "./components/sections/practical.jsx";
 import Resume from "./components/resume.jsx";
 import Section from "./components/sections/section.jsx";
 
@@ -111,6 +110,7 @@ export default function App() {
   const [achievements, setAchievements] = useState([]);
 
   const [practical, setPractical] = useState(practicalInit);
+  const [practicals, setPracticals] = useState([]);
 
   const root = document.querySelector("#root");
 
@@ -146,7 +146,7 @@ export default function App() {
           <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10">
             <General general={general} setGeneral={setGeneral} />
             <Section
-              sectionName="Educational experiences"
+              sectionName="Educational Experiences"
               add="experience"
               state={education}
               setState={setEducation}
@@ -163,7 +163,15 @@ export default function App() {
               states={achievements}
               setStates={setAchievements}
             />
-            <Practical practical={practical} setPractical={setPractical} />
+            <Section
+              sectionName="Practical Experiences"
+              add="experience"
+              state={practical}
+              setState={setPractical}
+              initState={practicalInit}
+              states={practicals}
+              setStates={setPracticals}
+            />
 
             <div className="self-end">
               <button
