@@ -126,7 +126,6 @@ export default function App() {
   const root = document.querySelector("#root");
 
   function handleGenerate() {
-    root.classList.toggle("bg-teal-400");
     setResume(true);
   }
 
@@ -138,7 +137,6 @@ export default function App() {
   }
 
   function handleEdit() {
-    root.classList.toggle("bg-teal-400");
     setResume(false);
   }
 
@@ -154,7 +152,7 @@ export default function App() {
         />
       ) : (
         <>
-          <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10">
+          <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10 my-8">
             <General general={general} setGeneral={setGeneral} />
             <Section
               sectionName="Educational Experiences"
