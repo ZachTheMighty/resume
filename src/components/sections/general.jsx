@@ -8,7 +8,7 @@ export default function General({ general, setGeneral }) {
         {Object.entries(general).map(
           ([key, input], index) =>
             key !== "photo" && (
-              <Input name={input.labelName} key={index}>
+              <Input name={input.label} key={index}>
                 <input
                   required
                   type={input.type}

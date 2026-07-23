@@ -26,7 +26,7 @@ export default function Section({
         }}
       >
         {Object.entries(state).map(([key, input], index) => (
-          <Input name={input.labelName} key={index} span={key}>
+          <Input name={input.label} key={index} span={key}>
             <input
               required
               type={input.type}

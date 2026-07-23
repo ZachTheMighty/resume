@@ -11,28 +11,28 @@ export default function App() {
     first: {
       value: "",
       type: "text",
-      labelName: "First name",
+      label: "First name",
     },
     last: {
       value: "",
       type: "text",
-      labelName: "Last name",
+      label: "Last name",
     },
     email: {
       value: "",
       type: "email",
-      labelName: "Email",
+      label: "Email",
     },
     phone: {
       value: "",
       type: "tel",
-      labelName: "Phone number",
+      label: "Phone number",
     },
 
     country: {
       value: "",
       type: "text",
-      labelName: "Country",
+      label: "Country",
     },
   };
 
@@ -40,22 +40,22 @@ export default function App() {
     school: {
       value: "",
       type: "text",
-      labelName: "School Name",
+      label: "School Name",
     },
     title: {
       value: "",
       type: "text",
-      labelName: "Title of study",
+      label: "Title of study",
     },
     from: {
       value: "",
       type: "date",
-      labelName: "From",
+      label: "From",
     },
     to: {
       value: "",
       type: "date",
-      labelName: "To",
+      label: "To",
     },
   };
 
@@ -63,13 +63,13 @@ export default function App() {
     achievement: {
       value: "",
       type: "text",
-      labelName: "Achievement",
+      label: "Achievement",
     },
 
     date: {
       value: "",
       type: "date",
-      labelName: "Date",
+      label: "Date",
     },
   };
 
@@ -77,7 +77,7 @@ export default function App() {
     skill: {
       value: "",
       type: "text",
-      labelName: "Skill",
+      label: "Skill",
     },
   };
 
@@ -85,27 +85,27 @@ export default function App() {
     previous: {
       value: "",
       type: "text",
-      labelName: "Previous company name",
+      label: "Previous company name",
     },
     position: {
       value: "",
       type: "text",
-      labelName: "Position title",
+      label: "Position title",
     },
     responibilities: {
       value: "",
       type: "text",
-      labelName: "Responibilities",
+      label: "Responibilities",
     },
     from: {
       value: "",
       type: "date",
-      labelName: "From",
+      label: "From",
     },
     to: {
       value: "",
       type: "date",
-      labelName: "To",
+      label: "To",
     },
   };
 
