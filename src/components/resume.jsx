@@ -15,7 +15,9 @@ export default function Resume({ general, edus }) {
         </div>
 
         <div className="flex items-center gap-4">
-          <img src={school} alt="school icon" className="w-8" />
+          <div className="rounded-full bg-indigo-500 p-2">
+            <img src={school} alt="school icon" className="w-8" />
+          </div>
           <div className="flex flex-wrap">
             <div className="font-semibold mr-2">School:</div>
             <div>{edus.at(-1).school.value}</div>
