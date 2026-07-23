@@ -4,6 +4,7 @@ import General from "./components/sections/general.jsx";
 import Education from "./components/sections/education.jsx";
 import Practical from "./components/sections/practical.jsx";
 import Resume from "./components/resume.jsx";
+import Achievement from "./components/sections/achievements.jsx";
 
 export default function App() {
   const [resume, setResume] = useState(false);
@@ -60,6 +61,20 @@ export default function App() {
     },
   };
 
+  const achievementsInit = {
+    achievement: {
+      value: "",
+      type: "text",
+      labelName: "Achievement",
+    },
+
+    date: {
+      value: "",
+      type: "date",
+      labelName: "Date",
+    },
+  };
+
   const practicalInit = {
     previous: {
       value: "",
@@ -91,8 +106,10 @@ export default function App() {
   const [general, setGeneral] = useState(generalInit);
 
   const [education, setEducation] = useState(educationInit);
-
   const [edus, setEdus] = useState([]);
+
+  const [achievement, setAchievement] = useState(achievementsInit);
+  const [achievements, setAchievements] = useState([]);
 
   const [practical, setPractical] = useState(practicalInit);
 
@@ -107,6 +124,7 @@ export default function App() {
     setGeneral(generalInit);
     setEducation(educationInit);
     setPractical(practicalInit);
+    setAchievement(achievementsInit);
   }
 
   function handleEdit() {
@@ -121,6 +139,7 @@ export default function App() {
           onEdit={handleEdit}
           general={general}
           edus={edus}
+          achievements={achievements}
           practical={practical}
         />
       ) : (
@@ -133,6 +152,13 @@ export default function App() {
               initState={educationInit}
               edus={edus}
               setEdus={setEdus}
+            />
+            <Achievement
+              achievement={achievement}
+              setAchievement={setAchievement}
+              initState={achievementsInit}
+              achievements={achievements}
+              setAchievements={setAchievements}
             />
             <Practical practical={practical} setPractical={setPractical} />
 
