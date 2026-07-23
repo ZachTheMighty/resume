@@ -1,17 +1,140 @@
 import { useState } from "react";
 
-import GenerateResume from "./components/generate_resume.jsx";
+import General from "./components/sections/general.jsx";
 import Resume from "./components/resume.jsx";
+import Section from "./components/sections/section.jsx";
 
 export default function App() {
   const [resume, setResume] = useState(false);
-  const [values, setValues] = useState({});
+
+  const generalInit = {
+    first: {
+      value: "",
+      type: "text",
+      label: "First name",
+    },
+    last: {
+      value: "",
+      type: "text",
+      label: "Last name",
+    },
+    email: {
+      value: "",
+      type: "email",
+      label: "Email",
+    },
+    phone: {
+      value: "",
+      type: "tel",
+      label: "Phone number",
+    },
+
+    country: {
+      value: "",
+      type: "text",
+      label: "Country",
+    },
+  };
+
+  const educationInit = {
+    school: {
+      value: "",
+      type: "text",
+      label: "School Name",
+    },
+    title: {
+      value: "",
+      type: "text",
+      label: "Title of study",
+    },
+    from: {
+      value: "",
+      type: "date",
+      label: "From",
+    },
+    to: {
+      value: "",
+      type: "date",
+      label: "To",
+    },
+  };
+
+  const achievementsInit = {
+    achievement: {
+      value: "",
+      type: "text",
+      label: "Achievement",
+    },
+
+    date: {
+      value: "",
+      type: "date",
+      label: "Date",
+    },
+  };
+
+  const skillsInit = {
+    skill: {
+      value: "",
+      type: "text",
+      label: "Skill",
+    },
+  };
+
+  const practicalInit = {
+    previous: {
+      value: "",
+      type: "text",
+      label: "Previous company name",
+    },
+    position: {
+      value: "",
+      type: "text",
+      label: "Position title",
+    },
+    responibilities: {
+      value: "",
+      type: "text",
+      label: "Responibilities",
+    },
+    from: {
+      value: "",
+      type: "date",
+      label: "From",
+    },
+    to: {
+      value: "",
+      type: "date",
+      label: "To",
+    },
+  };
+
+  const [general, setGeneral] = useState(generalInit);
+
+  const [education, setEducation] = useState(educationInit);
+  const [edus, setEdus] = useState([]);
+
+  const [achievement, setAchievement] = useState(achievementsInit);
+  const [achievements, setAchievements] = useState([]);
+
+  const [practical, setPractical] = useState(practicalInit);
+  const [practicals, setPracticals] = useState([]);
+
+  const [skill, setSkill] = useState(skillsInit);
+  const [skills, setSkills] = useState([]);
 
   const root = document.querySelector("#root");
 
   function handleGenerate() {
     root.classList.toggle("bg-teal-400");
     setResume(true);
+  }
+
+  function handleReset() {
+    setGeneral(generalInit);
+    setEducation(educationInit);
+    setPractical(practicalInit);
+    setAchievement(achievementsInit);
   }
 
   function handleEdit() {
@@ -22,13 +145,71 @@ export default function App() {
   return (
     <>
       {resume ? (
-        <Resume onEdit={handleEdit} values={values} />
-      ) : (
-        <GenerateResume
-          onGenerate={handleGenerate}
-          values={values}
-          setValues={setValues}
+        <Resume
+          onEdit={handleEdit}
+          general={general}
+          edus={edus}
+          achievements={achievements}
+          practical={practical}
         />
+      ) : (
+        <>
+          <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10">
+            <General general={general} setGeneral={setGeneral} />
+            <Section
+              sectionName="Educational Experiences"
+              add="experience"
+              state={education}
+              setState={setEducation}
+              initState={educationInit}
+              states={edus}
+              setStates={setEdus}
+            />
+            <Section
+              sectionName="Major Achievements"
+              add="achievement"
+              state={achievement}
+              setState={setAchievement}
+              initState={achievementsInit}
+              states={achievements}
+              setStates={setAchievements}
+            />
+            <Section
+              sectionName="Soft Skills"
+              add="skill"
+              state={skill}
+              setState={setSkill}
+              initState={skillsInit}
+              states={skills}
+              setStates={setSkills}
+            />
+            <Section
+              sectionName="Practical Experiences"
+              add="experience"
+              state={practical}
+              setState={setPractical}
+              initState={practicalInit}
+              states={practicals}
+              setStates={setPracticals}
+            />
+
+            <div className="self-end">
+              <button
+                className="mr-8 px-3 py-2 text-xl font-semibold hover:bg-white/10 rounded-md active:bg-white/5"
+                onClick={handleReset}
+              >
+                Reset form
+              </button>
+
+              <button
+                className="bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
+                onClick={handleGenerate}
+              >
+                Generate resume
+              </button>
+            </div>
+          </div>
+        </>
       )}
     </>
   );
