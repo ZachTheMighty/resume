@@ -123,8 +123,6 @@ export default function App() {
   const [skill, setSkill] = useState(skillsInit);
   const [skills, setSkills] = useState([]);
 
-  const root = document.querySelector("#root");
-
   function handleGenerate() {
     setResume(true);
   }
