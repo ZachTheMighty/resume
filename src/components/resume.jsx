@@ -21,7 +21,7 @@ export default function Resume({ general, edus }) {
           img={school}
           alt="school icon"
           header="School"
-          content={edus.at(-1).school.value}
+          content={edus.at(-1)?.school.value || ""}
         />
       </div>
       <div className="flex-2 bg-[#172131] min-h-full"></div>
