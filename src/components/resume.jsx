@@ -1,3 +1,4 @@
+import BasicInfo from "./basic_info.jsx";
 import school from "../assets/town-hall.svg";
 
 export default function Resume({ general, edus }) {
@@ -14,15 +15,12 @@ export default function Resume({ general, edus }) {
           {general.first.value} {general.last.value}
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="rounded-full bg-indigo-500 p-2">
-            <img src={school} alt="school icon" className="w-8" />
-          </div>
-          <div className="flex flex-wrap">
-            <div className="font-semibold mr-2">School:</div>
-            <div>{edus.at(-1).school.value}</div>
-          </div>
-        </div>
+        <BasicInfo
+          img={school}
+          alt="school icon"
+          header="School"
+          content={edus.at(-1).school.value}
+        />
       </div>
       <div className="flex-2 bg-[#172131] min-h-full"></div>
     </div>
