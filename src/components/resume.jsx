@@ -10,7 +10,7 @@ import phone from "../assets/phone.svg";
 export default function Resume({ general, edus }) {
   return (
     <div className="flex-1 flex min-h-screen">
-      <div className="flex-1 flex flex-col gap-8 items-center mt-24 bg-gray/10 min-h-full">
+      <div className="flex-1 flex flex-col gap-8 items-center justify-center bg-gray/10 min-h-full">
         <img
           src={general.photo || defaultPhoto}
           alt="profile picture"
