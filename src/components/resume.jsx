@@ -5,6 +5,7 @@ import defaultPhoto from "../assets/default_photo.jpg";
 import school from "../assets/town-hall.svg";
 import country from "../assets/city-variant-outline.svg";
 import email from "../assets/email-outline.svg";
+import phone from "../assets/phone.svg";
 
 export default function Resume({ general, edus }) {
   return (
@@ -38,6 +39,12 @@ export default function Resume({ general, edus }) {
           alt="email icon"
           header="Email"
           content={general.email.value || ""}
+        />
+        <BasicInfo
+          img={phone}
+          alt="phone icon"
+          header="Phone"
+          content={general.phone.value || ""}
         />
       </div>
       <div className="flex-2 bg-[#172131] min-h-full"></div>
