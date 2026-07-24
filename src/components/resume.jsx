@@ -12,10 +12,10 @@ export default function Resume({ general, edus }) {
         <img
           src={general.photo || defaultPhoto}
           alt="profile picture"
-          className="w-64 h-64 rounded-full object-cover"
+          className="w-32 h-32 md:w-64 md:h-64 rounded-full object-cover"
         />
 
-        <div className="text-2xl font-extrabold">
+        <div className="text-md md:text-2xl font-extrabold">
           {general.first.value || "First name "}
           {general.last.value || " Last name"}
         </div>
