@@ -1,4 +1,4 @@
-export default function formatter(date) {
+export default function (date) {
   const months = [
     "Jan",
     "Feb",
@@ -30,5 +30,3 @@ export default function formatter(date) {
     </div>
   );
 }
-
-console.log(formatter("2002-09-28"));
