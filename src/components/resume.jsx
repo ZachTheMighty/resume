@@ -7,6 +7,8 @@ import country from "../assets/city-variant-outline.svg";
 import email from "../assets/email-outline.svg";
 import phone from "../assets/phone.svg";
 
+import hat from "../assets/school.svg";
+
 export default function Resume({ general, edus }) {
   return (
     <div className="flex-1 flex min-h-screen">
@@ -47,7 +49,20 @@ export default function Resume({ general, edus }) {
           content={general.phone.value || ""}
         />
       </div>
-      <div className="flex-2 bg-[#172131] min-h-full"></div>
+      <div className="flex-2 flex flex-cols justify-center items-center bg-[#172131] min-h-full">
+        <div className="flex items-center gap-2">
+          <div className="rounded-full bg-indigo-500 p-1 sm:p-2">
+            <img
+              src={hat}
+              alt="hat icons"
+              className="min-w-4 sm:min-w-6 md:min-w-8"
+            />
+          </div>
+          <div className="text-indigo-500 font-semibold text-2xl">
+            EDUCATION
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
