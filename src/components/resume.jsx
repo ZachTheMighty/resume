@@ -1,7 +1,9 @@
 import BasicInfo from "./basic_info.jsx";
 
-import school from "../assets/town-hall.svg";
 import defaultPhoto from "../assets/default_photo.jpg";
+
+import school from "../assets/town-hall.svg";
+import country from "../assets/city-variant-outline.svg";
 
 export default function Resume({ general, edus }) {
   return (
@@ -23,6 +25,12 @@ export default function Resume({ general, edus }) {
           alt="school icon"
           header="School"
           content={edus.at(-1)?.school.value || ""}
+        />
+        <BasicInfo
+          img={country}
+          alt="country icon"
+          header="Country"
+          content={general.country.value || ""}
         />
       </div>
       <div className="flex-2 bg-[#172131] min-h-full"></div>
