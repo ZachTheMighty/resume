@@ -23,10 +23,9 @@ export default function (date) {
   else sup = "th";
 
   return (
-    <div>
+    <>
       {months[+arr[1] - 1]} {+arr[2]}
-      <sup>{sup}, </sup>
-      {arr[0]}
-    </div>
+      <sup>{sup}</sup>, {arr[0]}
+    </>
   );
 }
