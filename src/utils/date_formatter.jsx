@@ -25,7 +25,7 @@ export default function (date) {
   return (
     <>
       {months[+arr[1] - 1]} {+arr[2]}
-      <sup>{sup}</sup>, {arr[0]}
+      <sup>{sup}</sup> {arr[0]}
     </>
   );
 }
