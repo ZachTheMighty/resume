@@ -18,7 +18,7 @@ export default function Resume({ general, edus }) {
         />
 
         <div className="text-xs sm:text-sm md:text-2xl font-extrabold">
-          {general.first.value + " " || "First name "}
+          {general.first.value ? general.first.value + " " : "First name "}
           {general.last.value || " Last name"}
         </div>
 
