@@ -13,8 +13,9 @@ import dateFormatter from "../utils/date_formatter.jsx";
 
 import hat from "../assets/school.svg";
 import medal from "../assets/medal.svg";
+import tools from "../assets/tools.svg";
 
-export default function Resume({ general, edus, achievements }) {
+export default function Resume({ general, edus, achievements, skills }) {
   return (
     <div className="flex-1 flex min-h-screen">
       <div className="flex-1 flex flex-col gap-8 items-center justify-center bg-gray/10 min-h-full">
@@ -73,6 +74,15 @@ export default function Resume({ general, edus, achievements }) {
               {console.log(achievement)}
               {achievement.achievement.value} (
               {dateFormatter(achievement.date.value)})
+            </li>
+          ))}
+        />
+        <SectionsInfo
+          img={tools}
+          sectionName={skills.sectionName}
+          content={skills.skills.map((skill, index) => (
+            <li key={index} className="has-[+li]:mb-2">
+              {skill.skill.value}
             </li>
           ))}
         />
