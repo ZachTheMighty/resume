@@ -67,7 +67,7 @@ export default function Resume({
           img={hat}
           sectionName={edus.sectionName}
           content={edus.edus.map((edu, index) => (
-            <li key={index} className="has-[+li]:mb-2">
+            <li key={index} className="has-[+li]:mb-2 md:has-[+li]:mb-4">
               {edu.school.value} {edu.title.value} (
               {dateFormatter(edu.from.value)} - {dateFormatter(edu.to.value)})
             </li>
