@@ -17,7 +17,7 @@ export default function SectionsInfo({ img, sectionName, content }) {
               .join("")}
         </div>
       </div>
-      <ol className="list-disc pl-2 text-xs sm:text-base">{content}</ol>
+      <ol className="list-disc pl-6 text-xs sm:text-base">{content}</ol>
     </div>
   );
 }
