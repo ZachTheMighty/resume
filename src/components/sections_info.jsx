@@ -1,6 +1,6 @@
 export default function SectionsInfo({ img, sectionName, content }) {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 md:ml-50">
       <div className="flex items-center gap-2">
         <div className="rounded-full bg-indigo-500 p-1 sm:p-2">
           <img
