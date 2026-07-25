@@ -8,6 +8,7 @@ export default function App() {
   const [resume, setResume] = useState(false);
 
   const generalInit = {
+    sectionName: "General Information",
     first: {
       value: "",
       type: "text",
@@ -37,6 +38,7 @@ export default function App() {
   };
 
   const educationInit = {
+    sectionName: "Educational Experiences",
     school: {
       value: "",
       type: "text",
@@ -60,6 +62,7 @@ export default function App() {
   };
 
   const achievementsInit = {
+    sectionName: "Major Achievements",
     achievement: {
       value: "",
       type: "text",
@@ -74,6 +77,7 @@ export default function App() {
   };
 
   const skillsInit = {
+    sectionName: "Soft Skills",
     skill: {
       value: "",
       type: "text",
@@ -82,20 +86,16 @@ export default function App() {
   };
 
   const practicalInit = {
-    previous: {
+    sectionName: "Practical Experiences",
+    company: {
       value: "",
       type: "text",
-      label: "Previous company name",
+      label: "Company name",
     },
     position: {
       value: "",
       type: "text",
       label: "Position title",
-    },
-    responibilities: {
-      value: "",
-      type: "text",
-      label: "Responibilities",
     },
     from: {
       value: "",
@@ -123,10 +123,7 @@ export default function App() {
   const [skill, setSkill] = useState(skillsInit);
   const [skills, setSkills] = useState([]);
 
-  const root = document.querySelector("#root");
-
   function handleGenerate() {
-    root.classList.toggle("bg-teal-400");
     setResume(true);
   }
 
@@ -138,7 +135,6 @@ export default function App() {
   }
 
   function handleEdit() {
-    root.classList.toggle("bg-teal-400");
     setResume(false);
   }
 
@@ -148,16 +144,16 @@ export default function App() {
         <Resume
           onEdit={handleEdit}
           general={general}
-          edus={edus}
-          achievements={achievements}
-          practical={practical}
+          edus={{ edus, sectionName: education.sectionName }}
+          achievements={{ achievements, sectionName: achievement.sectionName }}
+          skills={{ skills, sectionName: skill.sectionName }}
+          practicals={{ practicals, sectionName: practical.sectionName }}
         />
       ) : (
         <>
-          <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10">
+          <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10 my-8">
             <General general={general} setGeneral={setGeneral} />
             <Section
-              sectionName="Educational Experiences"
               add="experience"
               state={education}
               setState={setEducation}
@@ -166,7 +162,6 @@ export default function App() {
               setStates={setEdus}
             />
             <Section
-              sectionName="Major Achievements"
               add="achievement"
               state={achievement}
               setState={setAchievement}
@@ -175,7 +170,6 @@ export default function App() {
               setStates={setAchievements}
             />
             <Section
-              sectionName="Soft Skills"
               add="skill"
               state={skill}
               setState={setSkill}
@@ -184,7 +178,6 @@ export default function App() {
               setStates={setSkills}
             />
             <Section
-              sectionName="Practical Experiences"
               add="experience"
               state={practical}
               setState={setPractical}
@@ -193,16 +186,16 @@ export default function App() {
               setStates={setPracticals}
             />
 
-            <div className="self-end">
+            <div className="self-end flex sm:block">
               <button
-                className="mr-8 px-3 py-2 text-xl font-semibold hover:bg-white/10 rounded-md active:bg-white/5"
+                className="flex-1 mr-8 px-3 py-2 text-xl font-semibold hover:bg-white/10 rounded-md active:bg-white/5"
                 onClick={handleReset}
               >
                 Reset form
               </button>
 
               <button
-                className="bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
+                className="flex-1 bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
                 onClick={handleGenerate}
               >
                 Generate resume
