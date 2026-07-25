@@ -104,6 +104,12 @@ export default function Resume({
             </li>
           ))}
         />
+
+        <div className="self-end flex sm:block sm:mb-10 md:mb-20 text-xs sm:text-xl md:text-2xl">
+          <button className="flex-1 bg-indigo-500 rounded-md px-3 py-2 font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2">
+            Print resume
+          </button>
+        </div>
       </div>
     </div>
   );
