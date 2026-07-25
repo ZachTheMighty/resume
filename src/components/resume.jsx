@@ -16,6 +16,9 @@ import medal from "../assets/medal.svg";
 import tools from "../assets/tools.svg";
 import briefcase from "../assets/briefcase.svg";
 
+import { useReactToPrint } from "react-to-print";
+import { useRef } from "react";
+
 export default function Resume({
   general,
   edus,
@@ -23,8 +26,15 @@ export default function Resume({
   skills,
   practicals,
 }) {
+  const componentRef = useRef(null);
+
+  const handlePrint = useReactToPrint({
+    contentRef: componentRef,
+    documentTitle: "Receipt_Data",
+  });
+
   return (
-    <div className="flex-1 flex min-h-screen">
+    <div ref={componentRef} className="flex-1 flex min-h-screen">
       <div className="flex-1 flex flex-col gap-8 items-center pt-16 bg-gray/10 min-h-full">
         <img
           src={general.photo || defaultPhoto}
@@ -62,7 +72,7 @@ export default function Resume({
           content={general.phone.value || ""}
         />
       </div>
-      <div className="flex-2 flex flex-col justify-center gap-16 bg-[#172131] min-h-full pl-4 py-32">
+      <div className="flex-2 flex flex-col gap-16 bg-[#172131] text-white min-h-full px-4 p-16 sm:pt-32 sm:px-8 md:px-32">
         <SectionsInfo
           img={hat}
           sectionName={edus.sectionName}
@@ -104,6 +114,15 @@ export default function Resume({
             </li>
           ))}
         />
+
+        <div className="self-end flex sm:block sm:mb-10 md:mb-20 text-xs sm:text-xl md:text-2xl print:hidden">
+          <button
+            onClick={handlePrint}
+            className="flex-1 bg-indigo-500 rounded-md px-3 py-2 font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
+          >
+            Print resume
+          </button>
+        </div>
       </div>
     </div>
   );
