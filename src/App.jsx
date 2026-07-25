@@ -8,7 +8,7 @@ export default function App() {
   const [resume, setResume] = useState(false);
 
   const generalInit = {
-    sectionName: "Generddfdal Information",
+    sectionName: "General Information",
     first: {
       value: "",
       type: "text",
@@ -149,9 +149,10 @@ export default function App() {
         <Resume
           onEdit={handleEdit}
           general={general}
-          edus={edus}
-          achievements={achievements}
-          practical={practical}
+          edus={{ edus, sectionName: education.sectionName }}
+          achievements={{ achievements, sectionName: achievement.sectionName }}
+          skills={{ skills, sectionName: skill.sectionName }}
+          practicals={{ practicals, sectionName: practical.sectionName }}
         />
       ) : (
         <>
