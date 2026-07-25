@@ -186,16 +186,16 @@ export default function App() {
               setStates={setPracticals}
             />
 
-            <div className="self-end">
+            <div className="self-end flex sm:block">
               <button
-                className="mr-8 px-3 py-2 text-xl font-semibold hover:bg-white/10 rounded-md active:bg-white/5"
+                className="flex-1 mr-8 px-3 py-2 text-xl font-semibold hover:bg-white/10 rounded-md active:bg-white/5"
                 onClick={handleReset}
               >
                 Reset form
               </button>
 
               <button
-                className="bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
+                className="flex-1 bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
                 onClick={handleGenerate}
               >
                 Generate resume
