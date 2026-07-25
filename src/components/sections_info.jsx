@@ -9,7 +9,7 @@ export default function SectionsInfo({ img, sectionName, content }) {
             className="min-w-4 sm:min-w-6 md:min-w-8"
           />
         </div>
-        <div className="text-indigo-500 font-semibold sm:text-2xl">
+        <div className="text-indigo-500 font-semibold text-sm sm:text-2xl md:text-4xl">
           {sectionName &&
             sectionName
               .split("")
@@ -17,7 +17,9 @@ export default function SectionsInfo({ img, sectionName, content }) {
               .join("")}
         </div>
       </div>
-      <ol className="list-disc pl-6 text-xs sm:text-base">{content}</ol>
+      <ol className="list-disc pl-6 text-xs sm:text-base md:text-xl">
+        {content}
+      </ol>
     </div>
   );
 }
