@@ -6,9 +6,12 @@ import school from "../assets/town-hall.svg";
 import country from "../assets/city-variant-outline.svg";
 import email from "../assets/email-outline.svg";
 import phone from "../assets/phone.svg";
-import hat from "../assets/school.svg";
+
+import SectionsInfo from "./sections_info.jsx";
 
 import dateFormatter from "../utils/date_formatter.jsx";
+
+import hat from "../assets/school.svg";
 
 export default function Resume({ general, edus }) {
   return (
@@ -29,7 +32,7 @@ export default function Resume({ general, edus }) {
           img={school}
           alt="school icon"
           header="School"
-          content={edus.at(-1)?.school.value || ""}
+          content={edus.edus.at(-1)?.school.value || ""}
         />
         <BasicInfo
           img={country}
@@ -51,28 +54,16 @@ export default function Resume({ general, edus }) {
         />
       </div>
       <div className="flex-2 flex flex-col justify-center items-center bg-[#172131] min-h-full pl-4">
-        <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-2">
-            <div className="rounded-full bg-indigo-500 p-1 sm:p-2">
-              <img
-                src={hat}
-                alt="hat icons"
-                className="min-w-4 sm:min-w-6 md:min-w-8"
-              />
-            </div>
-            <div className="text-indigo-500 font-semibold sm:text-2xl">
-              EDUCATION
-            </div>
-          </div>
-          <ol className="list-disc pl-2 text-xs sm:text-base">
-            {edus.map((edu, index) => (
-              <li key={index} className="has-[+li]:mb-2">
-                {edu.school.value} {edu.title.value} (
-                {dateFormatter(edu.from.value)} - {dateFormatter(edu.to.value)})
-              </li>
-            ))}
-          </ol>
-        </div>
+        <SectionsInfo
+          img={hat}
+          sectionName={edus.sectionName}
+          content={edus.edus.map((edu, index) => (
+            <li key={index} className="has-[+li]:mb-2">
+              {edu.school.value} {edu.title.value} (
+              {dateFormatter(edu.from.value)} - {dateFormatter(edu.to.value)})
+            </li>
+          ))}
+        />
       </div>
     </div>
   );
