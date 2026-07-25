@@ -62,7 +62,7 @@ export default function Resume({
           content={general.phone.value || ""}
         />
       </div>
-      <div className="flex-2 flex flex-col justify-center gap-16 bg-[#172131] min-h-full pl-4">
+      <div className="flex-2 flex flex-col justify-center gap-16 bg-[#172131] min-h-full pl-4 py-32">
         <SectionsInfo
           img={hat}
           sectionName={edus.sectionName}
