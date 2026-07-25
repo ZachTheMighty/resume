@@ -97,11 +97,6 @@ export default function App() {
       type: "text",
       label: "Position title",
     },
-    responibilities: {
-      value: "",
-      type: "text",
-      label: "Responibilities",
-    },
     from: {
       value: "",
       type: "date",
