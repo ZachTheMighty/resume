@@ -12,8 +12,9 @@ import SectionsInfo from "./sections_info.jsx";
 import dateFormatter from "../utils/date_formatter.jsx";
 
 import hat from "../assets/school.svg";
+import medal from "../assets/medal.svg";
 
-export default function Resume({ general, edus }) {
+export default function Resume({ general, edus, achievements }) {
   return (
     <div className="flex-1 flex min-h-screen">
       <div className="flex-1 flex flex-col gap-8 items-center justify-center bg-gray/10 min-h-full">
@@ -53,7 +54,7 @@ export default function Resume({ general, edus }) {
           content={general.phone.value || ""}
         />
       </div>
-      <div className="flex-2 flex flex-col justify-center items-center bg-[#172131] min-h-full pl-4">
+      <div className="flex-2 flex flex-col justify-center gap-16 bg-[#172131] min-h-full pl-4">
         <SectionsInfo
           img={hat}
           sectionName={edus.sectionName}
@@ -61,6 +62,17 @@ export default function Resume({ general, edus }) {
             <li key={index} className="has-[+li]:mb-2">
               {edu.school.value} {edu.title.value} (
               {dateFormatter(edu.from.value)} - {dateFormatter(edu.to.value)})
+            </li>
+          ))}
+        />
+        <SectionsInfo
+          img={medal}
+          sectionName={achievements.sectionName}
+          content={achievements.achievements.map((achievement, index) => (
+            <li key={index} className="has-[+li]:mb-2">
+              {console.log(achievement)}
+              {achievement.achievement.value} (
+              {dateFormatter(achievement.date.value)})
             </li>
           ))}
         />
