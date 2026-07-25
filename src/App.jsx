@@ -87,10 +87,10 @@ export default function App() {
 
   const practicalInit = {
     sectionName: "Practical Experiences",
-    previous: {
+    company: {
       value: "",
       type: "text",
-      label: "Previous company name",
+      label: "Company name",
     },
     position: {
       value: "",
