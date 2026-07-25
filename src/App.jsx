@@ -8,6 +8,7 @@ export default function App() {
   const [resume, setResume] = useState(false);
 
   const generalInit = {
+    sectionName: "Generddfdal Information",
     first: {
       value: "",
       type: "text",
@@ -37,6 +38,7 @@ export default function App() {
   };
 
   const educationInit = {
+    sectionName: "Educational Experiences",
     school: {
       value: "",
       type: "text",
@@ -60,6 +62,7 @@ export default function App() {
   };
 
   const achievementsInit = {
+    sectionName: "Major Achievements",
     achievement: {
       value: "",
       type: "text",
@@ -74,6 +77,7 @@ export default function App() {
   };
 
   const skillsInit = {
+    sectionName: "Soft Skills",
     skill: {
       value: "",
       type: "text",
@@ -82,6 +86,7 @@ export default function App() {
   };
 
   const practicalInit = {
+    sectionName: "Practical Experiences",
     previous: {
       value: "",
       type: "text",
@@ -153,7 +158,6 @@ export default function App() {
           <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10 my-8">
             <General general={general} setGeneral={setGeneral} />
             <Section
-              sectionName="Educational Experiences"
               add="experience"
               state={education}
               setState={setEducation}
@@ -162,7 +166,6 @@ export default function App() {
               setStates={setEdus}
             />
             <Section
-              sectionName="Major Achievements"
               add="achievement"
               state={achievement}
               setState={setAchievement}
@@ -171,7 +174,6 @@ export default function App() {
               setStates={setAchievements}
             />
             <Section
-              sectionName="Soft Skills"
               add="skill"
               state={skill}
               setState={setSkill}
@@ -180,7 +182,6 @@ export default function App() {
               setStates={setSkills}
             />
             <Section
-              sectionName="Practical Experiences"
               add="experience"
               state={practical}
               setState={setPractical}

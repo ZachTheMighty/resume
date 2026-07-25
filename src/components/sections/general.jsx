@@ -3,11 +3,12 @@ import Input from "../inputs/input.jsx";
 export default function General({ general, setGeneral }) {
   return (
     <div className="mb-15 max-w-3xl border-b border-white/10 pb-15">
-      <h1 className="mb-4 text-2xl font-base">General Information</h1>
+      <h1 className="mb-4 text-2xl font-base">{general.sectionName}</h1>
       <div className="flex flex-wrap justify-start items-center gap-6">
         {Object.entries(general).map(
           ([key, input], index) =>
-            key !== "photo" && (
+            key !== "photo" &&
+            key !== "sectionName" && (
               <Input name={input.label} key={index}>
                 <input
                   required
