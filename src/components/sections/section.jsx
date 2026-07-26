@@ -52,7 +52,7 @@ export default function Section({
           <img src={plus} alt="plus sign" className="w-8" />
         </button>
       </form>
-      {added && (
+      {added && states.length !== 0 && (
         <div className="mt-4 text-xl font-semibold text-green-600">
           {add[0].toUpperCase() + add.slice(1)} has been added!
         </div>
