@@ -20,6 +20,7 @@ import { useReactToPrint } from "react-to-print";
 import { useRef } from "react";
 
 export default function Resume({
+  onEdit,
   general,
   edus,
   achievements,
@@ -116,7 +117,10 @@ export default function Resume({
         />
 
         <div className="self-end flex sm:block sm:mb-10 md:mb-20 text-xs sm:text-xl md:text-2xl print:hidden">
-          <button className="flex-1 mr-8 px-3 py-2 font-semibold hover:bg-white/10 rounded-md active:bg-white/5">
+          <button
+            onClick={onEdit}
+            className="flex-1 mr-8 px-3 py-2 font-semibold hover:bg-white/10 rounded-md active:bg-white/5"
+          >
             Edit resume
           </button>
 
