@@ -129,9 +129,15 @@ export default function App() {
 
   function handleReset() {
     setGeneral(generalInit);
+
     setEducation(educationInit);
+    setEdus([]);
+
     setPractical(practicalInit);
+    setPracticals([])
+
     setAchievement(achievementsInit);
+    setAchievements([])
   }
 
   function handleEdit() {
