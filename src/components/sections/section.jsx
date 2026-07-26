@@ -2,6 +2,8 @@ import { useState } from "react";
 import Input from "../input.jsx";
 import plus from "../../assets/plus.svg";
 
+import EditResume from "../edit_resume.jsx";
+
 export default function Section({
   add,
   state,
@@ -55,6 +57,7 @@ export default function Section({
           {add[0].toUpperCase() + add.slice(1)} has been added!
         </div>
       )}{" "}
+      {states.length !== 0 && <EditResume items={states} />}
     </div>
   );
 }
