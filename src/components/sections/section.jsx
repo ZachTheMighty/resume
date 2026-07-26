@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Input from "../inputs/input";
+import Input from "../input.jsx";
 import plus from "../../assets/plus.svg";
 
 export default function Section({
