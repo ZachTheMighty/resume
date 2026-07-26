@@ -116,6 +116,10 @@ export default function Resume({
         />
 
         <div className="self-end flex sm:block sm:mb-10 md:mb-20 text-xs sm:text-xl md:text-2xl print:hidden">
+          <button className="flex-1 mr-8 px-3 py-2 font-semibold hover:bg-white/10 rounded-md active:bg-white/5">
+            Edit resume
+          </button>
+
           <button
             onClick={handlePrint}
             className="flex-1 bg-indigo-500 rounded-md px-3 py-2 font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
