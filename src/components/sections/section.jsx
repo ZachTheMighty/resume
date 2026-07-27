@@ -57,7 +57,9 @@ export default function Section({
           {add[0].toUpperCase() + add.slice(1)} has been added!
         </div>
       )}{" "}
-      {states.length !== 0 && <EditResume items={states} />}
+      {states.length !== 0 && (
+        <EditResume items={states} setItems={setStates} />
+      )}
     </div>
   );
 }

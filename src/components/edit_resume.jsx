@@ -1,6 +1,6 @@
 import trash from "../assets/trash-can-outline.svg";
 
-export default function EditResume({ items }) {
+export default function EditResume({ items, setItems }) {
   return (
     <table className="mt-16 mx-auto">
       <thead>
@@ -33,6 +33,9 @@ export default function EditResume({ items }) {
             <img
               src={trash}
               className="w-5 sm:w-7 absolute top-2 -right-7 sm:top-5 sm:-right-10 hover:opacity-70"
+              onClick={() =>
+                setItems(items.filter((element) => element !== item))
+              }
             />
           </tr>
         ))}
