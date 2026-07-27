@@ -32,7 +32,7 @@ export default function EditResume({ items }) {
             )}
             <img
               src={trash}
-              className="w-5 sm:w-7 absolute top-2 -right-7 sm:top-5 sm:-right-10"
+              className="w-5 sm:w-7 absolute top-2 -right-7 sm:top-5 sm:-right-10 hover:opacity-70"
             />
           </tr>
         ))}
