@@ -89,7 +89,6 @@ export default function Resume({
           sectionName={achievements.sectionName}
           content={achievements.achievements.map((achievement, index) => (
             <li key={index} className="has-[+li]:mb-2">
-              {console.log(achievement)}
               {achievement.achievement.value} (
               {dateFormatter(achievement.date.value)})
             </li>
