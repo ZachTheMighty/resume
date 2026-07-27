@@ -20,13 +20,32 @@ export default function EditResume({ items, setItems }) {
       </thead>
 
       <tbody>
-        {items.map((item) => (
+        {items.map((item, rowIndex) => (
           <tr className="text-xs sm:text-base md:text-xl even:bg-white/5 odd:bg-white/10 relative">
             {Object.entries(item).map(
               ([key, item]) =>
                 key !== "sectionName" && (
-                  <td key={key} className="p-2 sm:p-4 border border-white/10">
-                    {item.value}
+                  <td key={key} className="p-2 border border-white/10">
+                    <input
+                      className="w-full text-focus:outline-offset-2 px-3 py-1.5 focus:outline-2 focus:outline-indigo-500 rounded-md"
+                      type={item.type}
+                      value={item.value}
+                      onChange={(event) => {
+                        setItems((prevItems) =>
+                          prevItems.map((row, rIdx) =>
+                            rIdx === rowIndex
+                              ? {
+                                  ...row,
+                                  [key]: {
+                                    ...row[key],
+                                    value: event.target.value,
+                                  },
+                                }
+                              : row,
+                          ),
+                        );
+                      }}
+                    />
                   </td>
                 ),
             )}
