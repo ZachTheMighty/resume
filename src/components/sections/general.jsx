@@ -1,4 +1,4 @@
-import Input from "../inputs/input.jsx";
+import Input from "../input.jsx";
 
 export default function General({ general, setGeneral }) {
   return (

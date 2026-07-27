@@ -1,6 +1,8 @@
 import { useState } from "react";
-import Input from "../inputs/input";
+import Input from "../input.jsx";
 import plus from "../../assets/plus.svg";
+
+import EditResume from "../edit_resume.jsx";
 
 export default function Section({
   add,
@@ -50,11 +52,14 @@ export default function Section({
           <img src={plus} alt="plus sign" className="w-8" />
         </button>
       </form>
-      {added && (
+      {added && states.length !== 0 && (
         <div className="mt-4 text-xl font-semibold text-green-600">
           {add[0].toUpperCase() + add.slice(1)} has been added!
         </div>
       )}{" "}
+      {states.length !== 0 && (
+        <EditResume items={states} setItems={setStates} />
+      )}
     </div>
   );
 }
