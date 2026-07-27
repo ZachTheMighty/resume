@@ -30,13 +30,15 @@ export default function EditResume({ items, setItems }) {
                   </td>
                 ),
             )}
-            <img
-              src={trash}
-              className="w-5 sm:w-7 absolute top-2 -right-7 sm:top-5 sm:-right-10 hover:opacity-70"
-              onClick={() =>
-                setItems(items.filter((element) => element !== item))
-              }
-            />
+            <td className="absolute top-2 -right-7 sm:top-5 sm:-right-10 ">
+              <img
+                src={trash}
+                className="w-5 sm:w-7 hover:opacity-70"
+                onClick={() =>
+                  setItems(items.filter((element) => element !== item))
+                }
+              />
+            </td>
           </tr>
         ))}
       </tbody>
