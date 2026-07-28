@@ -133,11 +133,14 @@ export default function App() {
     setEducation(educationInit);
     setEdus([]);
 
-    setPractical(practicalInit);
-    setPracticals([]);
-
     setAchievement(achievementsInit);
     setAchievements([]);
+
+    setSkill(skillsInit);
+    setSkills([]);
+
+    setPractical(practicalInit);
+    setPracticals([]);
   }
 
   function handleEdit() {
