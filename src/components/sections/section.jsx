@@ -13,6 +13,7 @@ export default function Section({
   setStates,
 }) {
   const [added, setAdded] = useState(false);
+  const [firstInput, setFirstInput] = useState(null);
 
   return (
     <div className="mb-15 max-w-3xl border-b border-white/10 pb-15">
@@ -24,6 +25,7 @@ export default function Section({
           setState(initState);
           setStates([...states, state]);
           setAdded(true);
+          firstInput.focus();
         }}
       >
         {Object.entries(state).map(
@@ -41,6 +43,7 @@ export default function Section({
                       [key]: { ...state[key], value: event.target.value },
                     });
                     setAdded(false);
+                    index === 1 && setFirstInput(event.target); // first input is at index 1 because sectionName is the first property in the object
                   }}
                 />
               </Input>

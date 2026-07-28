@@ -133,11 +133,14 @@ export default function App() {
     setEducation(educationInit);
     setEdus([]);
 
-    setPractical(practicalInit);
-    setPracticals([])
-
     setAchievement(achievementsInit);
-    setAchievements([])
+    setAchievements([]);
+
+    setSkill(skillsInit);
+    setSkills([]);
+
+    setPractical(practicalInit);
+    setPracticals([]);
   }
 
   function handleEdit() {
@@ -157,7 +160,7 @@ export default function App() {
         />
       ) : (
         <>
-          <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10 my-8">
+          <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10 mx-2 my-8">
             <General general={general} setGeneral={setGeneral} />
             <Section
               add="experience"
@@ -204,7 +207,7 @@ export default function App() {
                 className="flex-1 bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
                 onClick={handleGenerate}
               >
-                Generate resume
+                Preview resume
               </button>
             </div>
           </div>

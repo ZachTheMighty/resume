@@ -4,13 +4,13 @@ export default function EditResume({ items, setItems }) {
   return (
     <table className="mt-16 mx-auto">
       <thead>
-        <tr className="text-xs sm:text-base md:text-xl bg-white/5">
+        <tr className="block sm:table-row text-xs sm:text-base md:text-xl bg-white/5">
           {Object.entries(items[0]).map(
             ([key, value], index) =>
               key !== "sectionName" && (
                 <th
                   key={index}
-                  className="p-2 sm:p-4 border border-white/10 text-start"
+                  className="block sm:table-cell p-2 sm:p-4 border border-white/10 text-start"
                 >
                   {value.label}
                 </th>
@@ -21,11 +21,17 @@ export default function EditResume({ items, setItems }) {
 
       <tbody>
         {items.map((item, rowIndex) => (
-          <tr className="text-xs sm:text-base md:text-xl even:bg-white/5 odd:bg-white/10 relative">
+          <tr
+            key={rowIndex}
+            className="block sm:table-row text-xs sm:text-base md:text-xl even:bg-white/5 odd:bg-white/10 relative"
+          >
             {Object.entries(item).map(
               ([key, item]) =>
                 key !== "sectionName" && (
-                  <td key={key} className="p-2 border border-white/10">
+                  <td
+                    key={key}
+                    className="block sm:table-cell p-2 border border-white/10"
+                  >
                     <input
                       className="w-full text-focus:outline-offset-2 px-3 py-1.5 focus:outline-2 focus:outline-indigo-500 rounded-md"
                       type={item.type}
