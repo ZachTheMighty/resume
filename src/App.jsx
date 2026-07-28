@@ -204,7 +204,7 @@ export default function App() {
                 className="flex-1 bg-indigo-500 rounded-md px-3 py-2 text-xl font-semibold hover:bg-indigo-600 focus:outline-2 focus:outline-indigo-500 focus:outline-offset-2"
                 onClick={handleGenerate}
               >
-                Generate resume
+                Preview resume
               </button>
             </div>
           </div>
