@@ -21,7 +21,10 @@ export default function EditResume({ items, setItems }) {
 
       <tbody>
         {items.map((item, rowIndex) => (
-          <tr className="text-xs sm:text-base md:text-xl even:bg-white/5 odd:bg-white/10 relative">
+          <tr
+            key={rowIndex}
+            className="text-xs sm:text-base md:text-xl even:bg-white/5 odd:bg-white/10 relative"
+          >
             {Object.entries(item).map(
               ([key, item]) =>
                 key !== "sectionName" && (
