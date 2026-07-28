@@ -160,7 +160,7 @@ export default function App() {
         />
       ) : (
         <>
-          <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10 my-8">
+          <div className="flex flex-col bg-[#172131] px-10 py-8 rounded-md outline outline-white/10 mx-2 my-8">
             <General general={general} setGeneral={setGeneral} />
             <Section
               add="experience"
