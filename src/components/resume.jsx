@@ -52,7 +52,7 @@ export default function Resume({
           img={school}
           alt="school icon"
           header="School"
-          content={edus.edus.at(-1)?.school.value || ""}
+          content={edus.edus.at(0)?.school.value || ""}
         />
         <BasicInfo
           img={country}
