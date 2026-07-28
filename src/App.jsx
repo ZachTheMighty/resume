@@ -134,10 +134,10 @@ export default function App() {
     setEdus([]);
 
     setPractical(practicalInit);
-    setPracticals([])
+    setPracticals([]);
 
     setAchievement(achievementsInit);
-    setAchievements([])
+    setAchievements([]);
   }
 
   function handleEdit() {
